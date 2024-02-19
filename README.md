@@ -4,9 +4,16 @@
 ![Version](https://img.shields.io/badge/Version-2.212-white)
 
 # Fast PHP Page Module
-## Windmill Example Site Module Template
+## Documentation Site Module
 
-This is a more advanced site module using the windmill template. Here you can see how you can use the windmill template to deploy a website using this template and see how some cms functions work.
+ Fast PHP Page Module integrating the Documentation. It explains functionalities about the Fast-PHP-Page CMS and maybe gives additional required informations for developers and customers using this CMS. 
+ 
+ You can also find documentations here:
+ 
+Documentation Bugfish Framework:  
+https://www.bugfish-github.de/bugfish-framework  
+Documentation Fast-PHP-Page:  
+https://www.bugfish-github.de/fast-php-page    
 
 **This project is a module for the fast-php-page cms to always have the documentation for this template in hand! You can download this module out of your fast-php-page store if you are using the _administrator module!**
 
