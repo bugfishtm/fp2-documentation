@@ -119,7 +119,7 @@
 						<h2 class="section-heading">Introduction</h2>
 										<p>Welcome to the Fast-PHP-Page Project, a pioneering web development solution designed to streamline your web development endeavors. This dynamic platform offers a rich set of features, including native support for dynamic CSS, JavaScript, and Cronjobs. It equips you with the essential tools to effortlessly create and maintain web applications. Whether you seek diverse design styles or the convenience of pre-installed, fully functional libraries from the "Bugfish Framework," our project caters to all your web development requirements.</p>
 										
-<div class="callout-block callout-block-info">
+						<div class="callout-block callout-block-info">
                             <div class="content">
                                 <h4 class="callout-title">
 	                                <span class="callout-icon-holder me-1">
@@ -128,6 +128,11 @@
 	                                Initial Login Data
 	                            </h4>
                                 <p>The initial Login data if you are using the _administrator site module or loging functionality by core is as follow:<br /><b>Username:</b> admin@admin.local<br /><b>Password:</b> changeme</p>
+							 </div><!--//content-->
+                        </div>		
+						<div class="alert alert-danger">
+                            <div class="content">
+                                If upper steps for initial login are not working try admin/changeme. It depends on various site module configurations and in standalone mode default initial login can be setup in the site modules config files.
                             </div><!--//content-->
                         </div>
 						
@@ -227,9 +232,11 @@ Add this image to your project created with this CMS to support us!<br /><img sr
 						<p>Our web project offers a wide range of powerful features that are designed to simplify your web development journey. These key functionalities provide you with the tools and capabilities you need to create, manage, and customize websites effectively.</p><br />
 							<!--<h2 class="section-heading">Page Styling</h2>-->
 						
+						<h4>Full integrated enhanced Administration Panel</h4>
+						<p>This CMS comes with a fully functioning responsive administration backend, for you to be used in development of site modules or just to enjoy the many functions of it! Included is file management, user management, debugging insights of all available CMS Debugging areas. The _administrator Module Grants you access to our store, or helps you setting up your own store instance of you need one! Functions are included to easily use all advanced theme functionalities of the AdminBSB Material Design! The _administrator module is delivered with the fast-php-page cms by default. You can choose if you want to delete this admin module and built your own standalone website, or if you want to copy if for your own project! You can even use our administrator module site by site with your pages, or you can set up own site by site procedures following our guidelines! Have fun coding!</p>
 						
-						<h4> Copyable and Usable Admin Interface</h4>
-						<p>CMS _administrator Site Module offers a way to navigating the platform, emphasizing a fully copyable and usable admin interface. This feature facilitates efficient content management, user administration, and streamlined control over various system functionalities.</p>
+						<h4> Copyable Site by Site Backend Module</h4>
+						<p>CMS _windmill-backend Site Module offers a way to navigating the platform, emphasizing a fully copyable and usable admin interface. This feature facilitates efficient content management, user administration, and streamlined control over various system functionalities.</p>
 						<div class="simplelightbox-gallery row mb-3">
 							<div class="col-12 col-md-4 mb-3">
 						        <a href="./windmill-backend.png"><img class="figure-img img-fluid shadow rounded" src="./windmill-backend.png" alt="" title="Simple Backend Site Module Screenshot"></a>
@@ -706,7 +713,7 @@ Add this image to your project created with this CMS to support us!<br /><img sr
 							</tr>
 							<tr>	
 								<td>$object["comment"]</td>
-								<td><a href="../bugfish-framework/classes/x_class_comment.html" rel="noopener" target="_blank">x_class_comment</a></td>				
+								<td><a href="../bugfish-framework/classes/x_class_comment.html" rel="noopener" target="_blank">x_class_comment</a> (Only reserved, not initialized on startup.)</td>				
 							</tr>
 							<tr>	
 								<td colspan="2" style="background: #242424;">Mail Related</td>			
@@ -735,15 +742,31 @@ Add this image to your project created with this CMS to support us!<br /><img sr
 								<td><a href="../bugfish-framework/classes/x_class_perm.html" rel="noopener" target="_blank">x_class_perm</a> - with group permissions</td>				
 							</tr>
 							<tr>	
+								<td>$object["perm_user_glob"]</td>
+								<td><a href="../bugfish-framework/classes/x_class_perm.html" rel="noopener" target="_blank">x_class_perm</a> - with users permissions globally (site mode section "" in database)</td>				
+							</tr>
+							<tr>	
+								<td>$object["perm_group_glob"]</td>
+								<td><a href="../bugfish-framework/classes/x_class_perm.html" rel="noopener" target="_blank">x_class_perm</a> - with group permissions (site mode section "" in database)</td>				
+							</tr>
+							<tr>	
 								<td>$object["user_perm"]</td>
 								<td><a href="../bugfish-framework/classes/x_class_perm.html" rel="noopener" target="_blank">x_class_perm_item</a> for current user</td>				
 							</tr>
 							<tr>	
+								<td>$object["user_perm_glob"]</td>
+								<td><a href="../bugfish-framework/classes/x_class_perm.html" rel="noopener" target="_blank">x_class_perm_item</a> for current user (site mode section "" in database)</td>				
+							</tr>
+							<tr>	
 								<td>$object["user_groups"][X]</td>
-								<td>Group Data out of Users Group Database for Every Group Current Logged In User is Part Of</td>				
+								<td>Group Data out of Users Group Database for Every Group Current Logged In User is Part Of, contains array items with values from group database. Not sorted in a specific order, needs to be looped through and checked for [id] if you want to check single IDs. X is just the array Item key which is non-related to anything of the group itself (it only holds it)</td>				
 							</tr>
 							<tr>	
 								<td>$object["user_groups"][X]["perm_obj"]</td>
+								<td><a href="../bugfish-framework/classes/x_class_perm.html" rel="noopener" target="_blank">x_class_perm_item</a> for specific group</td>				
+							</tr>
+							<tr>	
+								<td>$object["user_groups"][X]["perm_obj_glob"]</td>
 								<td><a href="../bugfish-framework/classes/x_class_perm.html" rel="noopener" target="_blank">x_class_perm_item</a> for specific group</td>				
 							</tr>
 						</table>
@@ -885,26 +908,11 @@ Add this image to your project created with this CMS to support us!<br /><img sr
 								<td>Table to store File Group Shares by administrator module or other administrator modules!</td>				
 							</tr>
 							<tr>	
-								<td colspan="2" style="background: #242424;">Taskflow Tables</td>			
-							</tr>
-							<tr>	
-								<td>_TABLE_WFC_</td>
-								<td>Table to save task flow items!</td>				
-							</tr>
-							<tr>	
-								<td>_TABLE_WFC_DATA_</td>
-								<td>Additional Task Data saved by modules by administrator module or other administrator modules!</td>				
-							</tr>
-							<tr>	
-								<td>_TABLE_WFC_GROUP_</td>
-								<td>Table to save task flow group/screen relations!</td>				
-							</tr>
-							<tr>	
-								<td>_TABLE_WFC_SCREEN_</td>
-								<td>Table to save screen information for tasks into!</td>				
-							</tr>
-							<tr>	
 								<td colspan="2" style="background: #242424;">Additional Functionalities Tables</td>			
+							</tr>
+							<tr>	
+								<td>_TABLE_TASK_</td>
+								<td>Table to save task items!</td>				
 							</tr>
 							<tr>	
 								<td>_TABLE_COMMENT_</td>
@@ -995,20 +1003,8 @@ Add this image to your project created with this CMS to support us!<br /><img sr
 								<td>Full Path to Public Uploaded Folder</td>				
 							</tr>
 							<tr>	
-								<td>_HIVE_PATH_BACKUP_</td>
-								<td>Path to Backup Save Folder</td>				
-							</tr>
-							<tr>	
-								<td>_HIVE_PATH_STORE_CACHE_</td>
-								<td>Path to Store Cache Folder</td>				
-							</tr>
-							<tr>	
-								<td>_HIVE_PATH_STORE_DL_</td>
-								<td>Path to Store Download Folder</td>				
-							</tr>
-							<tr>	
-								<td>_HIVE_PATH_DEACTIVATED_</td>
-								<td>Path to folder with deactivated Site Modules</td>				
+								<td>_HIVE_PATH_INTERNAL_</td>
+								<td>Full Path to Internal System Folder</td>				
 							</tr>
 							
 							<tr>	
