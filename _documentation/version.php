@@ -25,18 +25,19 @@
 	*/	
 	$x = array();
 	$x["rname"] 		= "_documentation";
-	$x["build"] 		= "212";
-	$x["version"] 		= "2.".$x["build"];
+	$x["name"] 			= "FP² Documentation";
+	
+	$x["short"] 		= "This module contains the official documentation for you to get insights about integrated functions, classes templates and more! You can also find on <a href=\"https://bugfishtm.github.io\" rel='noopener' target=\"_blank\">https://bugfishtm.github.io</a>!";
+	$x["build"] 		= "100";
+	$x["version"] 		= "1.".$x["build"];
 	$x["iframe"] 		= true;
 	$x["view"] 			= true;
 	$x["singleuse"] 	= false;
-	$x["cat"] 			= "docs";
-	$x["lang"] 			= array("en");
-	$x["license"] 		= "MIT";
+	$x["cat"] 			= "documentation";
+	$x["license"] 		= "GPLv3";
 	$x["autor"] 		= "Jan-Maurice Dahlmanns";
 	$x["pseudo"] 		= "Bugfish";
 	$x["mail"] 			= "requests@bugfish.eu";
 	$x["website"] 		= "www.bugfish.eu";
-	$x["name"] 			= "FP2 Documentation";
-	$x["short"] 		= "For fast development check out the documentation of this project! It contains the Fast PHP Page CMS Documentation you can also find on <a href=\"https://bugfishtm.github.io\" rel='noopener' target=\"_blank\">https://bugfishtm.github.io</a>!";
-	$x["description"] 	= "If you are a developer this Site Module may be the right thing for you! It contains the Fast PHP Page CMS Documentation you can also find on <a href=\"https://bugfishtm.github.io\" rel='noopener' target=\"_blank\">https://bugfishtm.github.io</a>!";
+	$x["lang"] 			= array("en");
+	$x["description"] 	= $x["short"];
