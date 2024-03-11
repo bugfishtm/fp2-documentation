@@ -259,7 +259,7 @@ Add this image to your project created with this CMS to support us!<br /><img sr
 						
 						<div class="simplelightbox-gallery row mb-3">
 							<div class="col-12 col-md-4 mb-3">
-						        <a href="./_windmill-backend1.png"><img class="figure-img img-fluid shadow rounded" src="./_windmill-backend1.png" alt="" title="Simple Backend Blacklist"></a>
+						        <a href="./_windmill-backend11.png"><img class="figure-img img-fluid shadow rounded" src="./_windmill-backend11.png" alt="" title="Simple Backend Blacklist"></a>
 							</div>
 							<div class="col-12 col-md-4 mb-3">
 						        <a href="./_windmill-backend2.png"><img class="figure-img img-fluid shadow rounded" src="./_windmill-backend2.png" alt="" title="Simple Backend Dashboard"></a>
@@ -1168,7 +1168,7 @@ Add this image to your project created with this CMS to support us!<br /><img sr
 							</tr>
 							<tr>
 								<td>/_core/_tools</td>
-								<td>Different PHP Scripts for Developers to be used to test functionalities, usage of this scripts can be deactivated in ruleset.php!</td>		
+								<td>Different PHP Scripts for Developers to be used to test functionalities, usage of this scripts can be deactivated in ruleset.php!</td>
 							</tr>
 							<tr>
 								<td>/_core/_tools/cookie_destroy.php</td>
@@ -1184,15 +1184,19 @@ Add this image to your project created with this CMS to support us!<br /><img sr
 							</tr>
 							<tr>	
 								<td>/_core/_misc</td>
-								<td>Various files needed for this CMS!</td>		
+								<td>Various files to switch between pages!</td>		
 							</tr>
 							<tr>
-								<td>/_core/_misc/admin_switch.php</td>
+								<td>/_core/_action/js_debug_action.php</td>
+								<td>If Javascript Debugging for Site Module is active, this is the action to log errors.</td>		
+							</tr>
+							<tr>
+								<td>/_core/_action/admin_switch.php</td>
 								<td>File can be executed in Browser to switch Between Backend Admin Panel and Frontpage (If Admin Panel is Activated in ruleset.php) and used! This file may gets updated on CMS-Updates.</td>		
 							</tr>
-							<tr>
-								<td>/_core/_misc/admin_switch_fast.php</td>
-								<td>File can be executed in Browser to switch Between Backend Admin Panel and Frontpage, faster without form prompt. Do not use this on website as a href url, or SEO Search engines may get confused. (If Admin Panel is Activated in ruleset.php) and used! This file may gets updated on CMS-Updates.</td>		
+							<tr>	
+								<td>/_core/_misc</td>
+								<td>Various files needed for this CMS!</td>		
 							</tr>
 							<tr>
 								<td>/_core/_misc/init.php</td>
@@ -1202,13 +1206,13 @@ Add this image to your project created with this CMS to support us!<br /><img sr
 								<td>/_core/_misc/internal.php</td>
 								<td>Internal Validation file, can be ignored.</td>
 							</tr>
-							<tr>
-								<td>/_core/_misc/js_debug_action.php</td>
-								<td>If Javascript Debugging for Site Module is active, this is the action to log errors.</td>		
-							</tr>
 							<tr>	
 								<td>/_core/_mysql</td>
 								<td>Folder contains auto-installed MySQL Databases for this CMS!</td>		
+							</tr>
+							<tr>	
+								<td>/_core/_api</td>
+								<td>Internal API not related to any Site Module.</td>		
 							</tr>
 							<tr>	
 								<td>/_core/_image</td>
@@ -1235,10 +1239,6 @@ Add this image to your project created with this CMS to support us!<br /><img sr
 								<td>Include file to load current Site Modules _js folder Files! This file may gets updated on CMS-Updates.</td>		
 							</tr>
 							<tr>
-								<td>/_core/js_debug_action.php</td>
-								<td>If Javascript Debugging for Site Module is active, this is the action to log errors.</td>		
-							</tr>
-							<tr>
 								<td>/_core/stylesheet.php</td>
 								<td>Include file to load current Site Modules _css folder Files! This file may gets updated on CMS-Updates.</td>		
 							</tr>
@@ -1248,6 +1248,14 @@ Add this image to your project created with this CMS to support us!<br /><img sr
 							</tr>
 							<tr>
 								<td colspan="2" style="background: #242424;"><b>/_cron</b></td>	
+							</tr>
+							<tr>	
+								<td>/_preview</td>
+								<td>Some general preview images about this project, folder may gets overwritten during core updates!</td>		
+							</tr>
+							<tr>	
+								<td>/_images</td>
+								<td>Some general images about this project, folder may gets overwritten during core updates!</td>		
 							</tr>
 							<tr>	
 								<td>/_cron</td>
@@ -1344,11 +1352,7 @@ Add this image to your project created with this CMS to support us!<br /><img sr
 							</tr>
 							<tr>
 								<td>/cfg_ruleset.php</td>
-								<td>Backend-Developer File to change some important Backend Settings which are not related to a site Module! More informations in the "Site Modules" section below! In this file are settings which control how the Handle will act to determine Site Modes and which Site Mode will be choosen. The Administrator Side Module can run Side by Side with your programmed Site Module to make administration for your website easier if you plan to build a website based on this cms framework! If this file will ever be affected by CMS Updates, than we will save your settings in there and rewrite them. Please do not write custom code in here, just choose Settings for different given Constants!</td>		
-							</tr>
-							<tr>
-								<td>/cfg_installer.php</td>
-								<td>If you want to use this cms with a standalone (no multi site and store able) module, you can change installer parameters here, to fit it for youre needs!</td>		
+								<td>Backend-Developer File to change some important Backend Settings which are not related to a site Module! More informations in the "Site Modules" section below! In this file are settings which control how the Handle will act to determine Site Modes and which Site Mode will be choosen. The Administrator Side Module can run Side by Side with your programmed Site Module to make administration for your website easier if you plan to build a website based on this cms framework! If this file will ever be affected by CMS Updates, than we will save your settings in there and rewrite them. Please do not write custom code in here, just choose Settings for different given Constants! If you want to use this cms with a standalone (no multi site and store able) module, you can change installer parameters here, to fit it for youre needs!</td>		
 							</tr>
 						</table>
 					</section>			
@@ -1623,6 +1627,33 @@ Add this image to your project created with this CMS to support us!<br /><img sr
 								<td>Passwordfilter: Min Numeric Signs</td>				
 							</tr>
 							<tr>	
+								<td colspan="2" style="background: #242424;">Default Activation Scripts Config</td>		
+							</tr>
+							<tr>	
+								<td>_HIVE_USR_ACT_DISABLE_</td>
+								<td>Disable the general User Activation page? (0/1)</td>				
+							</tr>
+							<tr>	
+								<td>_HIVE_USR_ACT_REFER_</td>
+								<td>Refer to this path if you want to use special User Activation page for Site Mode</td>				
+							</tr>
+							<tr>	
+								<td>_HIVE_USR_REC_REFER_</td>
+								<td>Refer to this path if you want to use special Recover Execution page for Site Mode</td>				
+							</tr>
+							<tr>	
+								<td>_HIVE_USR_REC_DISABLE_</td>
+								<td>Disable the general Recover Activation page? (0/1)</td>				
+							</tr>
+							<tr>	
+								<td>_HIVE_USR_MC_REFER_</td>
+								<td>Refer to this path if you want to use special Mail Activation page for Site Mode</td>				
+							</tr>
+							<tr>	
+								<td>_HIVE_USR_MC_DISABLE_</td>
+								<td>Disable the general Mail Activation page? (0/1)</td>				
+							</tr>
+							<tr>	
 								<td colspan="2" style="background: #242424;">Create Initial Files</td>		
 							</tr>
 							<tr>	
@@ -1869,7 +1900,7 @@ Add this image to your project created with this CMS to support us!<br /><img sr
 						
 						<div class="simplelightbox-gallery row mb-3">
 							<div class="col-12 col-md-4 mb-3">
-						        <a href="./_example-windmill1.png"><img class="figure-img img-fluid shadow rounded" src="./_example-windmill1.png" alt="" title="Windmill Dark Dashboard"></a>
+						        <a href="./_example-windmill11.png"><img class="figure-img img-fluid shadow rounded" src="./_example-windmill11.png" alt="" title="Windmill Dark Dashboard"></a>
 							</div><!--//col-->
 							<div class="col-12 col-md-4 mb-3">
 						        <a href="./_example-windmill4.png"><img class="figure-img img-fluid shadow rounded" src="./_example-windmill4.png" alt="" title="Windmill Light Forms"></a>
@@ -1894,7 +1925,7 @@ Add this image to your project created with this CMS to support us!<br /><img sr
   <tbody>
     <!-- Alert Boxes -->
 							<tr>
-								<td colspan="2" style="background: #242424;"><b>Alerts</b></td>	
+								<td colspan="3" style="background: #242424;"><b>Alerts</b></td>	
 							</tr>
     <tr>
       <td>hive__windmill_alert_danger($message, $classes)</td>
@@ -1929,7 +1960,7 @@ Add this image to your project created with this CMS to support us!<br /><img sr
     
     <!-- Heading Elements -->
 							<tr>
-								<td colspan="2" style="background: #242424;"><b>Headings</b></td>	
+								<td colspan="3" style="background: #242424;"><b>Headings</b></td>	
 							</tr>
     <tr>
       <td>hive__windmill_h2($text, $classes)</td>
@@ -1944,7 +1975,7 @@ Add this image to your project created with this CMS to support us!<br /><img sr
     
     <!-- Button Elements -->
 							<tr>
-								<td colspan="2" style="background: #242424;"><b>Buttons</b></td>	
+								<td colspan="3" style="background: #242424;"><b>Buttons</b></td>	
 							</tr>
     <tr>
       <td>hive__windmill_button($text, $icon, $color, $tcolor, $type, $url, $name, $js, $classes)</td>
@@ -1974,7 +2005,7 @@ Add this image to your project created with this CMS to support us!<br /><img sr
     
     <!-- Box Elements -->
 							<tr>
-								<td colspan="2" style="background: #242424;"><b>Boxes / Containers</b></td>	
+								<td colspan="3" style="background: #242424;"><b>Boxes / Containers</b></td>	
 							</tr>
     <tr>
       <td>hive__windmill_box_start($header, $classes, $headerclasses)</td>
@@ -2009,7 +2040,7 @@ Add this image to your project created with this CMS to support us!<br /><img sr
     
     <!-- Modal Elements -->
 							<tr>
-								<td colspan="2" style="background: #242424;"><b>Modals</b></td>	
+								<td colspan="3" style="background: #242424;"><b>Modals</b></td>	
 							</tr>
     <tr>
       <td>hive__windmill_modal($text, $title, $icon, $closebutton)</td>
@@ -2019,7 +2050,7 @@ Add this image to your project created with this CMS to support us!<br /><img sr
     
     <!-- Main Elements -->
 							<tr>
-								<td colspan="2" style="background: #242424;"><b>Main Elements</b></td>	
+								<td colspan="3" style="background: #242424;"><b>Main Elements</b></td>	
 							</tr>
     <tr>
       <td>hive__windmill_footer($object, $footer, $classes, $end_div)</td>
@@ -2062,7 +2093,7 @@ Add this image to your project created with this CMS to support us!<br /><img sr
       <td>$object, $profile_menu = false, $theme_menu = false, $search = false, $title = false, $img = "", $lang_ar = false</td>
     </tr>
 							<tr>
-								<td colspan="2" style="background: #242424;"><b>Templates</b></td>	
+								<td colspan="3" style="background: #242424;"><b>Templates</b></td>	
 							</tr>
     <tr>
       <td>hive__windmill_404($object, $text, $title, $classes)</td>
@@ -2094,7 +2125,7 @@ Add this image to your project created with this CMS to support us!<br /><img sr
 						
 						<div class="simplelightbox-gallery row mb-3">
 							<div class="col-12 col-md-4 mb-3">
-						        <a href="./_adminbsb1.png"><img class="figure-img img-fluid shadow rounded" src="./_adminbsb1.png" alt="" title="AdminBSB Theme Dashboard"></a>
+						        <a href="./_adminbsb11.png"><img class="figure-img img-fluid shadow rounded" src="./_adminbsb11.png" alt="" title="AdminBSB Theme Dashboard"></a>
 							</div>
 							<div class="col-12 col-md-4 mb-3">
 						        <a href="./_adminbsb2.png"><img class="figure-img img-fluid shadow rounded" src="./_adminbsb2.png" alt="" title="AdminBSB Theme Boxes"></a>
@@ -2108,12 +2139,12 @@ Add this image to your project created with this CMS to support us!<br /><img sr
 						
 						<h3>Volt Theme</h3>
 						<p>This is an alternative for the windmill theme in bootstrap 5! <a href="https://github.com/themesberg/volt-bootstrap-5-dashboard" rel="noopener" target="_blank">Here you can find the Repository of the integrated more enhanced "Volt Administrator Dashboard".</a> This is just a credit for the developer, stick to this documentation here for informations on how to use this template!
-						<b>See Example Site Module _example-volt to get insights on how to use this templates functions! <b>Functions of Volt Template are similar to the windmill dashboard functions but are not explained here yet. Look up the files of the default _example-volt site module to get insights! You can copy and reuse the module if you need it. You can even modify it, but watch out to not update it, as this may removes your changes.</b></p>
+						<b>See Example Site Module _example-volt to get insights on how to use this templates functions! </b>Functions of Volt Template are similar to the windmill dashboard functions but are not explained here yet. Look up the files of the default _example-volt site module to get insights! You can copy and reuse the module if you need it. You can even modify it, but watch out to not update it, as this may removes your changes.</p>
 						
 						
 						<div class="simplelightbox-gallery row mb-3">
 							<div class="col-12 col-md-4 mb-3">
-						        <a href="./_example-volt1.png"><img class="figure-img img-fluid shadow rounded" src="./_example-volt1.png" alt="" title="Volt Theme Dashboard"></a>
+						        <a href="./_example-volt1x.png"><img class="figure-img img-fluid shadow rounded" src="./_example-volt1x.png" alt="" title="Volt Theme Dashboard"></a>
 							</div>
 							<div class="col-12 col-md-4 mb-3">
 						        <a href="./_example-volt2.png"><img class="figure-img img-fluid shadow rounded" src="./_example-volt2.png" alt="" title="Volt Theme Forms"></a>
@@ -2139,7 +2170,7 @@ Add this image to your project created with this CMS to support us!<br /><img sr
   <tbody>
     <!-- Alert Boxes -->
 							<tr>
-								<td colspan="2" style="background: #242424;"><b>Alerts</b></td>	
+								<td colspan="3" style="background: #242424;"><b>Alerts</b></td>	
 							</tr>
     <tr>
       <td>hive__volt_alert_danger($message, $classes)</td>
@@ -2174,7 +2205,7 @@ Add this image to your project created with this CMS to support us!<br /><img sr
     
     <!-- Heading Elements -->
 							<tr>
-								<td colspan="2" style="background: #242424;"><b>Headings</b></td>	
+								<td colspan="3" style="background: #242424;"><b>Headings</b></td>	
 							</tr>
     <tr>
       <td>hive__volt_h2($text, $classes)</td>
@@ -2189,7 +2220,7 @@ Add this image to your project created with this CMS to support us!<br /><img sr
     
     <!-- Box Elements -->
 							<tr>
-								<td colspan="2" style="background: #242424;"><b>Boxes / Containers</b></td>	
+								<td colspan="3" style="background: #242424;"><b>Boxes / Containers</b></td>	
 							</tr>
     <tr>
       <td>hive__volt_box_start($header, $classes, $headerclasses, $subtitle = false)</td>
@@ -2214,7 +2245,7 @@ Add this image to your project created with this CMS to support us!<br /><img sr
     
     <!-- Modal Elements -->
 							<tr>
-								<td colspan="2" style="background: #242424;"><b>Modals</b></td>	
+								<td colspan="3" style="background: #242424;"><b>Modals</b></td>	
 							</tr>
     <tr>
       <td>hive__volt_modal($text, $title, $icon, $closebutton)</td>
@@ -2224,7 +2255,7 @@ Add this image to your project created with this CMS to support us!<br /><img sr
     
     <!-- Main Elements -->
 							<tr>
-								<td colspan="2" style="background: #242424;"><b>Main Elements</b></td>	
+								<td colspan="3" style="background: #242424;"><b>Main Elements</b></td>	
 							</tr>
     <tr>
       <td>hive__volt_footer($object, $footer, $classes, $end_div)</td>
@@ -2252,7 +2283,7 @@ Add this image to your project created with this CMS to support us!<br /><img sr
       <td>$object, $buttontext, $text</td>
     </tr>
 							<tr>
-								<td colspan="2" style="background: #242424;"><b>Templates</b></td>	
+								<td colspan="3" style="background: #242424;"><b>Templates</b></td>	
 							</tr>
     <tr>
       <td>hive__volt_404($object, $text, $title, $classes)</td>
@@ -2295,7 +2326,7 @@ Add this image to your project created with this CMS to support us!<br /><img sr
 								<th>Parameters</th>
 							</tr>	
 							<tr>	
-								<td colspan="2" style="background: #242424;">Get Relative Current URL (Usable for very purposes on navigations and more!)</td>		
+								<td colspan="3" style="background: #242424;">Get Relative Current URL (Usable for very purposes on navigations and more!)</td>		
 							</tr>					
 						
   <tr>
@@ -2304,7 +2335,7 @@ Add this image to your project created with this CMS to support us!<br /><img sr
     <td>$array - An array of values used to construct the URL.</td>
   </tr>
 							<tr>	
-								<td colspan="2" style="background: #242424;">Full Error Page Display</td>		
+								<td colspan="3" style="background: #242424;">Full Error Page Display</td>		
 							</tr>			
   <tr>
     <td>`hive_error_full($title, $subtitle, $description, $exit, $code)`</td>
@@ -2318,7 +2349,7 @@ Add this image to your project created with this CMS to support us!<br /><img sr
     </td>
   </tr>
 							<tr>	
-								<td colspan="2" style="background: #242424;">Check for Access Function</td>		
+								<td colspan="3" style="background: #242424;">Check for Access Function</td>		
 							</tr>			
   <tr>
     <td>`hive__access($object, $rights, $displayerror = false)`</td>
@@ -2330,7 +2361,7 @@ Add this image to your project created with this CMS to support us!<br /><img sr
     </td>
   </tr>		
 							<tr>	
-								<td colspan="2" style="background: #242424;">Get Relative Folder (Internal Use)</td>		
+								<td colspan="3" style="background: #242424;">Get Relative Folder (Internal Use)</td>		
 							</tr>			
   <tr>
     <td>`hive_get_url_rel($array)`</td>
@@ -2340,7 +2371,7 @@ Add this image to your project created with this CMS to support us!<br /><img sr
     </td>
   </tr>		
 							<tr>	
-								<td colspan="2" style="background: #242424;">Set Site Session User Default Values</td>		
+								<td colspan="3" style="background: #242424;">Set Site Session User Default Values</td>		
 							</tr>	
   <tr>
     <td>`hive__user_lang_set($object, $user_id, $hive_mode, $lang_name)`</td>
@@ -2383,7 +2414,7 @@ Add this image to your project created with this CMS to support us!<br /><img sr
     </td>
   </tr>	
 							<tr>
-								<td colspan="2" style="background: #242424;"><b>Login and Account Execution Functions</b></td>	
+								<td colspan="3" style="background: #242424;"><b>Login and Account Execution Functions</b></td>	
 							</tr>
   <tr>
     <td>hive__template_mail_activate</td>
